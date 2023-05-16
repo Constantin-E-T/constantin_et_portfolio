@@ -5,15 +5,34 @@
 {% block content %}
     <div class="container">
         <h1>Projects</h1>
-        {% for project in projects %}
-        <div class="card mb-3">
-            <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
-            <div class="card-body">
-                <h5 class="card-title">{{ project.title }}</h5>
-                <p class="card-text">{{ project.description }}</p>
-                <a href="{{ project.url }}" class="btn btn-primary" target="_blank">View Project</a>
+
+        
+
+        <div class="row">
+            {% for project in projects %}
+            <div class="col-lg-4 col-md-6 col-sm-12"> <!-- This will make the card 4 columns wide on large screens, 6 on medium screens, and 12 (full width) on small screens -->
+                <div class="card mb-3">
+                    <img class="card-img-top" src="{{ project.image.url }}" alt="{{ project.title }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ project.title|truncatechars:30 }}</h5> <!-- Truncate the title here -->
+                        <p class="card-text">{{ project.description|truncatechars:100 }}</p> <!-- Use the truncatechars filter here -->
+                        <a href="{{ project.url }}" target="_blank">
+                            <div class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </div>
+                        </a>
+                        <a href="{{ project.live_url }}" target="_blank">
+                            <div class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-globe fa-stack-1x fa-inverse"></i>
+                            </div>
+                        </a>
+                        
+                    </div>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </div>
 {% endblock %}
