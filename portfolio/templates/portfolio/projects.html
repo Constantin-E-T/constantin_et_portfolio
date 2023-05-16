@@ -1,0 +1,19 @@
+<!-- portfolio/templates/portfolio/projects.html -->
+
+{% extends "portfolio/base_generic.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>Projects</h1>
+        {% for project in projects %}
+        <div class="card mb-3">
+            <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.description }}</p>
+                <a href="{{ project.url }}" class="btn btn-primary" target="_blank">View Project</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
