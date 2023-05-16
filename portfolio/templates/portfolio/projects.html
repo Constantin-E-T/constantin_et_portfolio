@@ -6,8 +6,17 @@
     <div class="container">
         <h1>Projects</h1>
 
-        
+        <!-- Search form -->
+        <form method="GET" action="">
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search by technology" name="q" value="{{ request.GET.q }}">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </div>
+            </div>
+        </form>
 
+        <!-- Project list -->
         <div class="row">
             {% for project in projects %}
             <div class="col-lg-4 col-md-6 col-sm-12"> <!-- This will make the card 4 columns wide on large screens, 6 on medium screens, and 12 (full width) on small screens -->
@@ -16,6 +25,25 @@
                     <div class="card-body">
                         <h5 class="card-title">{{ project.title|truncatechars:30 }}</h5> <!-- Truncate the title here -->
                         <p class="card-text">{{ project.description|truncatechars:100 }}</p> <!-- Use the truncatechars filter here -->
+                        
+                        <!-- Display other project details -->
+                        <p>Completion date: {{ project.completion_date }}</p>
+                        <p>Difficulty level: {{ project.difficulty_level }}</p>
+                        <p>Status: {{ project.status }}</p>
+
+                        <!-- Display the tags for the project -->
+                        <p>Tags: {{ project.tags }}</p>
+
+
+                        <!-- Display the technologies used in the project -->
+                        <p>Technologies:</p>
+                        {% for technology in project.technologies.all %}
+                            <a href="{{ technology.website }}" class="btn btn-outline-secondary" target="_blank">
+                                <img src="{{ technology.logo.url }}" alt="{{ technology.name }}" width="20" height="20">
+                                {{ technology.name }}
+                            </a>
+                        {% endfor %}
+<hr>
                         <a href="{{ project.url }}" target="_blank">
                             <div class="fa-stack fa-lg">
                                 <i class="fas fa-circle fa-stack-2x"></i>
