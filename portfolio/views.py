@@ -1,11 +1,7 @@
 from django.shortcuts import render
 from django.db.models import Q
 from django.views.generic import ListView  # add this import
-from .models import Testimonial
-
-
-
-from .models import Project
+from .models import Testimonial, About, Project
 
 # Create your views here.
 
@@ -36,3 +32,7 @@ class ProjectIndexView(ListView):
 
 
         return queryset
+
+def about(request):
+    about = About.objects.first()  # Assumes you only have one About model instance
+    return render(request, 'portfolio/about.html', {'about': about})

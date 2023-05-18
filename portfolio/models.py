@@ -49,15 +49,30 @@ class Testimonial(models.Model):
             self.date = timezone.now()
         super().save(*args, **kwargs)
 
-
-from django.db import models
-
 class Footer(models.Model):
     title = models.CharField(max_length=200)
 
     def __str__(self):
         return self.title
 
+from django.db import models
+
+class Skill(models.Model):
+    name = models.CharField(max_length=200)
+
+    def __str__(self):
+        return self.name
+
+class About(models.Model):
+    title = models.CharField(max_length=200)
+    bio = models.TextField()
+    skills = models.ManyToManyField(Skill, related_name='skills')
+    interests = models.TextField(help_text="Write about your interests here.")
+
+class FAQ(models.Model):
+    about = models.ForeignKey(About, on_delete=models.CASCADE, related_name='faqs')
+    question = models.CharField(max_length=300)
+    answer = models.TextField()
 
 
 

@@ -1,10 +1,33 @@
-<!-- portfolio/templates/portfolio/about.html -->
-
 {% extends "portfolio/base_generic.html" %}
 
 {% block content %}
     <div class="container">
-        <h1>About Constantin ET</h1>
-        <p>This is the about page where you can add information about yourself.</p>
+        <h1>{{ about.title }}</h1>
+
+        <div class="row">
+            <div class="col-md-8">
+                <h2>Biography</h2>
+                <p>{{ about.bio }}</p>
+            </div>
+
+            <div class="col-md-4">
+                <h2>Skills</h2>
+                <ul>
+                    {% for skill in about.skills.all %}
+                        <li>{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <h2>FAQs</h2>
+        {% for faq in about.faqs.all %}
+            <h3>{{ faq.question }}</h3>
+            <p>{{ faq.answer }}</p>
+        {% endfor %}
+        
+        <h2>Interests</h2>
+        <p>{{ about.interests }}</p>
+
     </div>
 {% endblock %}
