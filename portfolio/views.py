@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.db.models import Q
 from django.views.generic import ListView  # add this import
+from .models import Testimonial
+
 
 
 from .models import Project
@@ -8,7 +10,9 @@ from .models import Project
 # Create your views here.
 
 def home(request):
-    return render(request, 'portfolio/home.html')
+    testimonials = Testimonial.objects.all()
+
+    return render(request, 'portfolio/home.html', {'testimonials': testimonials})
 
 def about(request):
     return render(request, 'portfolio/about.html')

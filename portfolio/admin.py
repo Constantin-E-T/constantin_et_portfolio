@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Project, Technology
+from .models import Project, Technology, Testimonial, Footer
 
 class TechnologyInline(admin.TabularInline):
     model = Project.technologies.through
@@ -14,3 +14,5 @@ class ProjectAdmin(admin.ModelAdmin):
 
 admin.site.register(Project)
 admin.site.register(Technology)
+admin.site.register(Testimonial)
+admin.site.register(Footer)

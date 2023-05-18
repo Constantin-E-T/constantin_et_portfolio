@@ -4,3 +4,21 @@
     height: 200px;
     object-fit: cover;
 }
+
+.testimonial-card {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-inner {
+    padding: 20px;
+}
+
+

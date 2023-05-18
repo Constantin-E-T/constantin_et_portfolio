@@ -1,0 +1,6 @@
+/* portfolio/static/portfolio/css/styles.css */
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
