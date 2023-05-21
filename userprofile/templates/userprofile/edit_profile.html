@@ -5,7 +5,11 @@
   <h2>Edit profile</h2>
   <form method="POST" enctype="multipart/form-data">
   {% csrf_token %}
-    {{ form.as_table }}
+    <h3>User Info</h3>
+    {{ user_form.as_table }}
+    <h3>Profile Info</h3>
+    {{ profile_form.as_table }}
     <button type="submit">Update</button>
   </form>
 {% endblock %}
+

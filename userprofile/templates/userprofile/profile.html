@@ -10,6 +10,9 @@
     <p>Profile bio: {{ user_profile.bio }}</p>
     <p>Location: {{ user_profile.location }}</p>
     <p>Profile photo: <img src="{{ user_profile.profile_photo.url }}" alt="{{ user.get_username }}'s profile photo"></p>
+    <p>Last login: {{ user.last_login|date:"F j, Y, P" }}</p>
+    <p>Date joined: {{ user.date_joined|date:"F j, Y" }}</p>
+
 
 
 
