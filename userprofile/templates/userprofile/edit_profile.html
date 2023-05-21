@@ -1,0 +1,11 @@
+<!-- userprofile/templates/userprofile/edit_profile.html -->
+{% extends 'portfolio/base_generic.html' %}
+
+{% block content %}
+  <h2>Edit profile</h2>
+  <form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+    {{ form.as_table }}
+    <button type="submit">Update</button>
+  </form>
+{% endblock %}
