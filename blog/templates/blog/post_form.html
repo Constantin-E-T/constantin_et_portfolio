@@ -1,0 +1,12 @@
+<!-- constantin_et/blog/templates/blog/post_form.html -->
+
+{% extends "portfolio/base_generic.html" %}
+
+{% block content %}
+  <h2>New Post</h2>
+  <form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Post</button>
+  </form>
+{% endblock content %}

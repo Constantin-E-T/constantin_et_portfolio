@@ -6,7 +6,7 @@ from .models import UserProfile
 from .forms import UserProfileForm, UserUpdateForm
 
 
-@login_required
+@login_required(login_url='login')
 def profile(request):
     user_profile = UserProfile.objects.get(user=request.user)
     # print("Profile photo URL:", user_profile.profile_photo.url)  

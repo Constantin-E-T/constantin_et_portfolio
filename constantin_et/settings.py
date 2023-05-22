@@ -37,10 +37,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # third party apps start
+    'crispy_forms',
+    # third party apps end
+    # my apps
     'portfolio',
     'register',
     'userprofile',
+    'blog',
+    # my apps end
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,6 +63,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'constantin_et.urls'
+LOGIN_URL = 'login'  # The name of your login view
+
 
 TEMPLATES = [
     {

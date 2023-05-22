@@ -1,0 +1,13 @@
+<!-- constantin_et/blog/templates/blog/confirm_delete.html -->
+
+{% extends "portfolio/base_generic.html" %}
+
+{% block content %}
+  <h2>Delete Post</h2>
+  <p>Are you sure you want to delete the post "{{ object.title }}"?</p>
+  <form method="POST">
+    {% csrf_token %}
+    <button type="submit">Confirm</button>
+  </form>
+  <a href="{% url 'blog-home' %}">Cancel</a>
+{% endblock content %}
