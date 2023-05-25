@@ -1,6 +1,10 @@
 <!-- portfolio/templates/portfolio/projects.html -->
-
 {% extends "portfolio/base_generic.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'portfolio/css/projects_styles.css' %}">
+{% endblock %}
 
 {% block content %}
     <div class="container">
@@ -19,7 +23,7 @@
         <!-- Project list -->
         <div class="row">
             {% for project in projects %}
-            <div class="col-lg-4 col-md-6 col-sm-12"> <!-- This will make the card 4 columns wide on large screens, 6 on medium screens, and 12 (full width) on small screens -->
+            <div class="col-12 mb-3"><!-- This will make the card 4 columns wide on large screens, 6 on medium screens, and 12 (full width) on small screens -->
                 <div class="card mb-3">
                     <img class="card-img-top" src="{{ project.image.url }}" alt="{{ project.title }}">
                     <div class="card-body">

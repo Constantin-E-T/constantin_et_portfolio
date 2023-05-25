@@ -1,0 +1,31 @@
+/* portfolio/static/portfolio/css/projects_styles.css */
+
+.container {
+    max-width: 900px !important;
+    margin: auto !important;
+    padding: 2rem !important;
+}
+
+.card {
+    border: none !important;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; /* Add a subtle shadow to the cards */
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: #007bff !important; /* Vivid blue color */
+}
+
+.btn-outline-secondary {
+    border-color: #007bff !important; /* Vivid blue color */
+    color: #007bff !important; /* Vivid blue color */
+}
+
+.btn-outline-secondary:hover {
+    background-color: #007bff !important; /* Vivid blue color */
+    color: #fff !important; /* White color */
+}
