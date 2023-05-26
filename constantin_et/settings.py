@@ -27,7 +27,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['constantin-portolio.up.railway.app']
 
-CSRF_TRUSTED_ORIGINS = ['http://constantin-portolio.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://constantin-portolio.up.railway.app']
+
 
 
 
