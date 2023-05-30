@@ -1,16 +1,42 @@
 /* portfolio/static/portfolio/css/styles.css */
 
+.container {
+    max-width: 900px !important;
+    margin: auto !important;
+    padding: 2rem !important;
+}
+
+.display-4 {
+    font-size: 2.5rem !important;
+    color: #007bff !important; /* Vivid blue color */
+}
+
+.lead {
+    font-size: 1.25rem !important;
+    color: #6c757d !important;
+}
+
+.btn-lg {
+    padding: 1rem 2rem !important;
+    font-size: 1.25rem !important;
+    background-color: #007bff !important; /* Vivid blue color */
+    border-color: #007bff !important; /* Vivid blue color */
+}
+
+.btn-lg:hover {
+    background-color: #0056b3 !important; /* Darker blue color on hover */
+    border-color: #0056b3 !important; /* Darker blue color on hover */
+}
+
 .card-img-top {
     height: 200px;
     object-fit: cover;
 }
 
 .testimonial-card {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    max-width: 700px !important;
+    margin: auto !important;
+    text-align: center !important;
 }
 
 .carousel-control-next-icon, .carousel-control-prev-icon {
@@ -21,4 +47,34 @@
     padding: 20px;
 }
 
+.navbar {
+    background-color: #007bff !important; /* Vivid blue color */
+    color: #fff !important;
+}
 
+.navbar-brand {
+    color: #fff !important; /* white color for contrast */
+    font-size: 1.5rem !important; /* make the brand a bit larger */
+    font-weight: bold !important; /* make the brand bold */
+}
+
+.navbar-nav {
+    list-style-type: none !important; /* remove bullet points */
+}
+
+.nav-item {
+    padding: 0.5rem 1rem !important; /* give each item some space */
+}
+
+.nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: #ddd !important; /* lighter color on hover for feedback */
+}
+
+.footer {
+    background-color: #f8f9fa !important; /* Light gray color */
+    color: #6c757d !important; /* Dark gray color */
+}
