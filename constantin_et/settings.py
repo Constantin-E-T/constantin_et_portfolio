@@ -21,7 +21,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = True
 
 # ALLOWED_HOSTS = ['127.0.0.1']
-ALLOWED_HOSTS = ['constantin-portolio.up.railway.app']
+ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = ['https://constantin-portolio.up.railway.app']
 
@@ -32,8 +32,8 @@ CSRF_TRUSTED_ORIGINS = ['https://constantin-portolio.up.railway.app']
 
 INSTALLED_APPS = [
     # Add these two apps related to cloudinary
-    'cloudinary',
     'cloudinary_storage',
+    'cloudinary',
     'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
