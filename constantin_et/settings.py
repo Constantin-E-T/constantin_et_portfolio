@@ -28,9 +28,6 @@ ALLOWED_HOSTS = ['constantin-portolio.up.railway.app']
 CSRF_TRUSTED_ORIGINS = ['https://constantin-portolio.up.railway.app']
 
 
-CSRF_TRUSTED_ORIGINS = ['https://constantin-portolio.up.railway.app']
-
-
 
 
 # Application definition
@@ -142,7 +139,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
+STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
 
 # Media files (Uploaded by users)
 MEDIA_URL = '/media/'
