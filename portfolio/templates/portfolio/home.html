@@ -2,52 +2,56 @@
 {% extends "portfolio/base_generic.html" %}
 {% load static %}
 
-
 {% block content %}
+<!-- hero area -->
+<section class="hero-area has-background-primary" id="parallax">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-11-desktop is-offset-1-desktop">
+        <h1 class="has-text-white font-tertiary">Hi! I’m <br> Christoher <br> UX designer</h1>
+      </div>
+    </div>
+  </div>
+  <div class="layer-bg is-full">
+    <img class="image is-full" src="{% static 'images/illustrations/leaf-bg.png' %}" alt="bg-shape">
+  </div>
+  <div class="layer" id="l2">
+    <img src="{% static 'images/illustrations/dots-cyan.png' %}" alt="bg-shape">
+  </div>
+  <div class="layer" id="l3">
+    <img src="{% static 'images/illustrations/leaf-orange.png' %}" alt="bg-shape">
+  </div>
+  <div class="layer" id="l4">
+    <img src="{% static 'images/illustrations/dots-orange.png' %}" alt="bg-shape">
+  </div>
+  <div class="layer" id="l5">
+    <img src="{% static 'images/illustrations/leaf-yellow.png' %}" alt="bg-shape">
+  </div>
+  <div class="layer" id="l6">
+    <img src="{% static 'images/illustrations/leaf-cyan.png' %}" alt="bg-shape">
+  </div>
+  <div class="layer" id="l7">
+    <img src="{% static 'images/illustrations/dots-group-orange.png' %}" alt="bg-shape">
+  </div>
+  <div class="layer" id="l8">
+    <img src="{% static 'images/illustrations/leaf-pink-round.png' %}" alt="bg-shape">
+  </div>
+  <div class="layer" id="l9">
+    <img src="{% static 'images/illustrations/leaf-cyan-2.png' %}" alt="bg-shape">
+  </div>
+  <!-- social icon -->
+  <div class="list list-hero-social">
+    <a class="list-item has-text-white" href="#"><i class="ti-facebook"></i></a>
+    <a class="list-item has-text-white" href="#"><i class="ti-instagram"></i></a>
+    <a class="list-item has-text-white" href="#"><i class="ti-dribbble"></i></a>
+    <a class="list-item has-text-white" href="#"><i class="ti-twitter"></i></a>
+  </div>
+  <!-- /social icon -->
+</section>
+<!-- /hero area -->
+
+<!-- existing content -->
 <div class="container my-5">
-    <div class="text-center py-5">
-        <h1 class="display-4 mb-4">Welcome to Constantin ET Portfolio</h1>
-        <img src="{% static 'img/profile.jpeg' %}" alt="Constantin"
-            class="img-fluid rounded-circle mb-3" style="width: 200px; height: 200px;">
-        <p class="lead mb-4">Here, you can view my most recent projects and get a sense of my skills and capabilities.</p>
-        <a href="{% url 'projects' %}" class="btn btn-primary btn-lg">View Projects</a>
-    </div>
-        
-
-    <h2>Contact</h2>
-    <p>Email: constantin@example.com | LinkedIn: <a href="#">link</a></p>
-
-    <h2>Testimonials</h2>
-
-    <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            {% for testimonial in testimonials %}
-            <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                <div class="card testimonial-card">
-                    <div class="card-body">
-                        <p class="card-text mt-3 mb-5" >"{{ testimonial.testimonial }}"</p>
-                        <hr>
-                        <h5 class="card-title mt-3">{{ testimonial.name }}</h5>
-                        <p class="card-text"><small class="text-muted">{{ testimonial.date }}</small></p>
-                    </div>
-                </div>
-            </div>
-            {% empty %}
-            <p>No testimonials yet!</p>
-            {% endfor %}
-        </div>
-        <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-    
-    
-
-   
+    <!-- existing content continues -->
 </div>
 {% endblock %}

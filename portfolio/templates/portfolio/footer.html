@@ -1,12 +1,28 @@
-<body class="d-flex flex-column min-vh-100">
-    <div class="container mb-auto">
-        <!-- Your main content goes here -->
-    </div>
-
-    <footer class="footer mt-auto py-3 bg-light text-center">
-        <div class="container">
-            <p>&copy;{% now "Y" %} {{ footer.title }}</p>
+<!-- footer -->
+<footer class="has-background-dark footer-section">
+    <div class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-4-tablet">
+            <h5 class="has-text-light">Email</h5>
+            <p class="has-text-white paragraph-lg font-secondary">emilian@email.com</p>
+          </div>
+          <div class="column is-4-tablet">
+            <h5 class="has-text-light">Phone</h5>
+            <p class="has-text-white paragraph-lg font-secondary">2544 658 256</p>
+          </div>
+          <div class="column is-4-tablet">
+            <h5 class="has-text-light">Address</h5>
+            <p class="has-text-white paragraph-lg font-secondary">125/A, Commercial Area, Portsmouth, UK</p>
+          </div>
         </div>
-    </footer>
-</body>
+      </div>
+    </div>
+    <div class="section is-small has-text-centered has-border-top is-border-dark">
+      <p class="has-text-light">Copyright ©
+          <p>&copy;{% now "Y" %} {{ footer.title }} a theme by <a href="themefisher.com">themefisher.com</a></p></p>
+         
+    </div>
+  </footer>
+  <!-- /footer -->
 

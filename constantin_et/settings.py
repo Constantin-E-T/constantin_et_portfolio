@@ -18,10 +18,23 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# Load the environment
+DJANGO_ENVIRONMENT = os.getenv('DJANGO_ENVIRONMENT')
 
-ALLOWED_HOSTS = ['constantin-portolio.up.railway.app']
+# Load debug setting
+DEBUG = True if os.getenv('DJANGO_DEBUG') == 'True' else False
+
+# Load allowed hosts
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS').split(',')
+
+# If we're in a production environment, add additional production settings
+if DJANGO_ENVIRONMENT == 'production':
+    # Production specific settings
+    pass
+elif DJANGO_ENVIRONMENT == 'development':
+    # Development specific settings
+    pass
+
 
 CSRF_TRUSTED_ORIGINS = ['https://constantin-portolio.up.railway.app']
 
@@ -137,7 +150,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
 # Media files (Uploaded by users)
 MEDIA_URL = '/media/'

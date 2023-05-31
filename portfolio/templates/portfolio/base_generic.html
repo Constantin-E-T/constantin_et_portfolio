@@ -15,6 +15,23 @@
     <!-- Add font-awesome -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    
+     <!-- ** Plugins Needed for the Project ** -->
+  <!-- bulma -->
+  <link rel="stylesheet" href="{% static 'plugins/bulma/bulma.min.css' %}">
+
+  <!-- slick slider -->
+  <link rel="stylesheet" href=" {% static 'plugins/slick/slick.css' %}">
+  <!-- themefy-icon -->
+  <link rel="stylesheet" href=" {% static 'plugins/themify-icons/themify-icons.css' %}">
+
+  <!-- Main Stylesheet -->
+  <link href=" {% static 'css/style.css' %}" rel="stylesheet">
+
+  <!--Favicon-->
+<link rel="shortcut icon" href=" {% static 'images/favicon.ico' %} " type="image/x-icon">
+<link rel="icon" href=" {% static 'images/favicon.ico' } " type="image/x-icon">
+
 
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
@@ -50,6 +67,16 @@
     <script>
         var isUserAuthenticated = "{{ user.is_authenticated }}";
     </script>
+    <!-- jQuery -->
+<script src=" {% static 'plugins/jQuery/jquery.min.js' %} "></script>
+<!-- slick slider -->
+<script src=" {% static 'plugins/slick/slick.min.js' %} "></script>
+
+<script src="{% static 'plugins/shuffle/shuffle.min.js' %}"></script>
+
+<!-- Main Script -->
+<script src="{% static 'js/script.js' %}"></script>
+
     <script src="{% static 'js/blog.js' %}"></script>
 </body>
 
