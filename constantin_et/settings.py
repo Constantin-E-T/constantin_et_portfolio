@@ -23,7 +23,7 @@ DJANGO_ENVIRONMENT = os.getenv('DJANGO_ENVIRONMENT')
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://constantin-portolio.up.railway.app']
+ALLOWED_HOSTS = ['constantin-portolio.up.railway.app']
 
 CSRF_TRUSTED_ORIGINS = ['https://constantin-portolio.up.railway.app']
 
