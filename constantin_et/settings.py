@@ -1,6 +1,12 @@
 import cloudinary_storage
 import cloudinary
 from pathlib import Path
+from dotenv import load_dotenv
+import os
+
+
+load_dotenv()
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -10,10 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-r++$2-d55=b00y!e_irmp541@tvoee-(mc$9%^i20n855f#i=%'
-
-# Load the environment
-DJANGO_ENVIRONMENT = os.getenv('DJANGO_ENVIRONMENT')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = False
 
@@ -89,14 +92,12 @@ WSGI_APPLICATION = 'constantin_et.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'GEALhhCaon27mjKEHrbz',
-        'HOST': 'containers-us-west-60.railway.app',
-        'PORT': '5460',
+        'NAME': os.getenv('DATABASE_NAME'),
+        'USER': os.getenv('DATABASE_USER'),
+        'PASSWORD': os.getenv('DATABASE_PASSWORD'),
+        'HOST': os.getenv('DATABASE_HOST'),
+        'PORT': os.getenv('DATABASE_PORT'),
     }
 }
 
@@ -146,9 +147,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Cloudinary configuration
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dtfmgc0tj',
-    'API_KEY': '514844258274759',
-    'API_SECRET': 'k53j1si5duewx9e87-8Vz28Yt_A'
+    'CLOUD_NAME': os.getenv('CLOUD_NAME'),
+    'API_KEY': os.getenv('API_KEY'),
+    'API_SECRET': os.getenv('API_SECRET')
 }
 cloudinary.config(
   cloud_name = CLOUDINARY_STORAGE['CLOUD_NAME'],  
