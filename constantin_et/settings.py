@@ -21,19 +21,11 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # Load the environment
 DJANGO_ENVIRONMENT = os.getenv('DJANGO_ENVIRONMENT')
 
-# Load debug setting
-DEBUG = True if os.getenv('DJANGO_DEBUG') == 'True' else False
+DEBUG = False
 
-# Load allowed hosts
-ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS').split(',')
+ALLOWED_HOSTS = ['constantin-portolio.up.railway.app']
 
-# If we're in a production environment, add additional production settings
-if DJANGO_ENVIRONMENT == 'production':
-    # Production specific settings
-    pass
-elif DJANGO_ENVIRONMENT == 'development':
-    # Development specific settings
-    pass
+CSRF_TRUSTED_ORIGINS = ['https://constantin-portolio.up.railway.app']
 
 
 CSRF_TRUSTED_ORIGINS = ['https://constantin-portolio.up.railway.app']
